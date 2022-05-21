@@ -1,0 +1,116 @@
+import random
+
+t = ["*", "*", "*", "*", "*", "*", "*", "*", "*"]
+
+
+def board():
+    print(t[0], "/", t[1], "/", t[2], "\n""_________""\n", t[3], "/", t[4], "/", t[5], "\n""_________""\n", t[6], "/",
+          t[7], "/", t[8], "\n""_________")
+
+board()
+# def win():
+#     if t[0] and t[1] and t[2]=="ㅇ" or t[3] and t[4] and t[5]=="ㅇ" or t[6] and t[7] and t[8]=="ㅇ" or t[0] and t[4] and t[8]=="ㅇ" or t[2] and t[4] and t[6]=="ㅇ" or t[0] and t[3] and t[6]=="ㅇ" or t[1] and t[4] and t[7]=="ㅇ" or t[2] and t[5] and t[8]=="ㅇ":
+#         print("you lose")
+#     elif t[0] and t[1] and t[2]=="X" or t[3] and t[4] and t[5]=="X" or t[6] and t[7] and t[8]=="X" or t[0] and t[4] and t[8]=="X" or t[2] and t[4] and t[6]=="X" or t[0] and t[3] and t[6]=="X" or t[1] and t[4] and t[7]=="X" or t[2] and t[5] and t[8]=="X":
+#         print("you win")# win()
+
+
+a = 0
+while True:
+    board()
+
+    if a == 0:
+        while True:
+            x = int(input())
+            if x == 0:
+                t[0] = "X"
+                #board()
+            elif x == 1:
+                t[1] = "X"
+                #board()
+            elif x == 2:
+                t[2] = "X"
+                #board()
+            elif x == 3:
+                t[3] = "X"
+                #board()
+            elif x == 4:
+                t[4] = "X"
+                #board()
+            elif x == 5:
+                t[5] = "X"
+                #board()
+            elif x == 6:
+                t[6] = "X"
+                #board()
+            elif x == 7:
+                t[7] = "X"
+                #board()
+            elif x == 8:
+                t[8] = "X"
+                #board()
+            if t[0] == "ㅇ" and t[1] == "ㅇ" and t[2] == "ㅇ":
+                print("you lose")
+                break
+                
+            elif t[3] == "ㅇ" and t[4] == "ㅇ" and t[5] == "ㅇ":
+                print("you lose")
+                break
+            elif t[6] == "ㅇ" and t[7] == "ㅇ" and t[8] == "ㅇ":
+                print("you lose")
+                break
+            elif t[0] == "ㅇ" and t[4] == "ㅇ" and t[8] == "ㅇ":
+                print("you lose")
+                break
+            elif t[2] == "ㅇ" and t[4] == "ㅇ" and t[6] == "ㅇ":
+                print("you lose")
+                break
+            elif t[0] == "ㅇ" and t[3] == "ㅇ" and t[6] == "ㅇ":
+                print("you lose")
+                break
+            elif t[1] == "ㅇ" and t[4] == "ㅇ" and t[7] == "ㅇ":
+                print("you lose")
+                break
+            elif t[2] == "ㅇ" and t[5] == "ㅇ" and t[8] == "ㅇ":
+                print("you lose")
+                break
+            elif t[0] == "X" and t[1] == "X" and t[2] == "X":
+                print("you win")
+                break
+            elif t[3] == "X" and t[4] == "X" and t[5] == "X":
+                print("you win")
+                break
+            elif t[6] == "X" and t[7] == "X" and t[8] == "X":
+                print("you win")
+                break
+            elif t[0] == "X" and t[4] == "X" and t[8] == "X":
+                print("you win")
+                break
+            elif t[2] == "X" and t[4] == "X" and t[6] == "X":
+                print("you win")
+                break
+            elif t[0] == "X" and t[3] == "X" and t[6] == "X":
+                print("you win")
+                break
+            elif t[1] == "X" and t[4] == "X" and t[7] == "X":
+                print("you win")
+                break
+            elif t[2] == "X" and t[5] == "X" and t[8] == "X":
+                print("you win")
+                break
+            a=1
+            if a == 1:
+                break
+
+    if a==1:
+        while True:
+            computer = random.randrange(0, 9)
+            if t[computer] == "*":
+                t[computer] = "ㅇ"
+                board()
+                a=0
+                break
+            else:
+                a=1
+            if a==0:
+                break
